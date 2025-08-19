@@ -6,7 +6,7 @@ This website is being built with AI-powered generation.
 - ✅ Repository created
 - ⏳ Wireframes generated
 - ✅ Style guide generated
-- ⏳ Pages pending
+- ✅ Pages generated
 - ⏳ Deployment pending
 
 ## Powered By
