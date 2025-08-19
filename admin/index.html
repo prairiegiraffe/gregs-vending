@@ -69,7 +69,9 @@
     });
     
     // Custom styling for CMS
-    CMS.registerPreviewStyle('/style.css');
+    if (window.CMS) {
+      CMS.registerPreviewStyle('/style.css');
+    }
   </script>
 </body>
 </html>
