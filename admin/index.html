@@ -4,6 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Website Content Manager</title>
+  <script>
+    // Store GitHub token if present in URL (for direct GitHub auth)
+    if (window.location.hash && window.location.hash.includes('access_token')) {
+      const params = new URLSearchParams(window.location.hash.substring(1));
+      const token = params.get('access_token');
+      if (token) {
+        localStorage.setItem('github_token', token);
+        // Clean up URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
+  </script>
   <style>
     body { 
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
