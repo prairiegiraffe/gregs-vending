@@ -2,10 +2,13 @@ backend:
   name: github
   repo: prairiegiraffe/gregs-vending
   branch: main
+  base_url: https://pg-sites.vercel.app
+  auth_endpoint: api/auth
 
 media_folder: "images"
 public_folder: "/images"
 
+# File-based media management
 media_library:
   name: uploadcare
   config:
@@ -17,6 +20,7 @@ display_url: https://gregs-vending-site.pages.dev
 # User-friendly interface
 show_preview_links: true
 search: true
+logo_url: https://via.placeholder.com/200x50/667eea/ffffff?text=Greg's%20Vending
 
 collections:
   - name: "site_settings"
