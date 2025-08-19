@@ -1,0 +1,145 @@
+backend:
+  name: github
+  repo: prairiegiraffe/gregs-vending
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+site_url: https://gregs-vending-site.pages.dev
+display_url: https://gregs-vending-site.pages.dev
+
+# User-friendly interface
+show_preview_links: true
+search: true
+
+collections:
+  - name: "site_settings"
+    label: "🏢 Business Information"
+    description: "Update your business details and contact information"
+    files:
+      - label: "Business Details"
+        name: "business"
+        file: "content/business.yml"
+        fields:
+          - {label: "Business Name", name: "name", widget: "string", hint: "Your business name as it appears on the website"}
+          - {label: "Tagline", name: "tagline", widget: "string", hint: "A short description of what you do"}
+          - {label: "Phone Number", name: "phone", widget: "string"}
+          - {label: "Email Address", name: "email", widget: "string"}
+          - {label: "Street Address", name: "address", widget: "text"}
+          - {label: "City", name: "city", widget: "string"}
+          - {label: "State/Province", name: "state", widget: "string"}
+          - {label: "ZIP/Postal Code", name: "zip", widget: "string"}
+          - {label: "Business Hours", name: "hours", widget: "text", hint: "e.g., Mon-Fri: 9am-5pm"}
+          - {label: "Service Areas", name: "service_areas", widget: "list", hint: "Cities or regions you serve"}
+          
+  - name: "pages"
+    label: "📄 Website Pages"
+    description: "Edit the content on your website pages"
+    files:
+      - label: "🏠 Home Page"
+        name: "home"
+        file: "content/home.yml"
+        fields:
+          - {label: "Hero Headline", name: "hero_title", widget: "string", hint: "Main headline visitors see first"}
+          - {label: "Hero Description", name: "hero_description", widget: "text", hint: "Brief description under the headline"}
+          - {label: "Call-to-Action Button Text", name: "cta_text", widget: "string", default: "Get Quote"}
+          - {label: "Services Section Title", name: "services_title", widget: "string", default: "Our Services"}
+          - label: "Featured Services"
+            name: "featured_services"
+            widget: "list"
+            fields:
+              - {label: "Service Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Icon (optional)", name: "icon", widget: "string", required: false}
+          - {label: "Why Choose Us Section", name: "why_choose_us", widget: "markdown", hint: "Highlight what makes you different"}
+          
+      - label: "ℹ️ About Page"
+        name: "about"
+        file: "content/about.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "About Us"}
+          - {label: "Company Story", name: "story", widget: "markdown", hint: "Tell your company's story"}
+          - {label: "Years in Business", name: "years_in_business", widget: "string"}
+          - {label: "Mission Statement", name: "mission", widget: "text"}
+          - label: "Team Members"
+            name: "team"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Position", name: "position", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "text"}
+              - {label: "Photo", name: "photo", widget: "image", required: false}
+              
+      - label: "🔧 Services Page"
+        name: "services"
+        file: "content/services.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Our Services"}
+          - {label: "Services Introduction", name: "intro", widget: "text"}
+          - label: "Service Categories"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Service Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "markdown"}
+              - {label: "Starting Price (optional)", name: "price", widget: "string", required: false}
+              - {label: "Service Image", name: "image", widget: "image", required: false}
+              
+      - label: "📞 Contact Page"
+        name: "contact"
+        file: "content/contact.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Contact Us"}
+          - {label: "Contact Introduction", name: "intro", widget: "text", hint: "Message encouraging people to get in touch"}
+          - {label: "Show Contact Form", name: "show_form", widget: "boolean", default: true}
+          - {label: "Emergency/After Hours Number", name: "emergency_phone", widget: "string", required: false}
+          - {label: "Google Maps Embed Code", name: "map_embed", widget: "text", required: false, hint: "Paste Google Maps embed code here"}
+          
+  - name: "testimonials"
+    label: "⭐ Customer Reviews"
+    description: "Manage customer testimonials and reviews"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Customer Name", name: "name", widget: "string"}
+      - {label: "Review Title", name: "title", widget: "string"}
+      - {label: "Review Text", name: "review", widget: "text"}
+      - {label: "Star Rating (1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5, default: 5}
+      - {label: "Service Provided", name: "service", widget: "string", required: false}
+      - {label: "Date of Service", name: "date", widget: "datetime", required: false}
+      - {label: "Show on Website", name: "featured", widget: "boolean", default: true}
+      
+  - name: "blog"
+    label: "📝 Blog Posts"
+    description: "Share news, tips, and updates with your customers"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Excerpt", name: "excerpt", widget: "text", hint: "Brief summary for previews"}
+      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Publish", name: "published", widget: "boolean", default: false}
+      
+  - name: "gallery"
+    label: "📸 Photo Gallery"
+    description: "Showcase your work with before/after photos"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Project Name", name: "title", widget: "string"}
+      - {label: "Project Description", name: "description", widget: "text"}
+      - {label: "Service Category", name: "category", widget: "string"}
+      - {label: "Before Photo", name: "before_image", widget: "image", required: false}
+      - {label: "After Photo", name: "after_image", widget: "image"}
+      - {label: "Additional Photos", name: "gallery_images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - {label: "Project Date", name: "date", widget: "datetime"}
+      - {label: "Show on Homepage", name: "featured", widget: "boolean", default: false}
