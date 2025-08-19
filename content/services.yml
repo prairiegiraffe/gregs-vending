@@ -1,0 +1,23 @@
+title: "Our Services"
+intro: "We offer comprehensive vending machines and snacks services to meet all your needs in Gillette and surrounding areas."
+services:
+  - name: "Vending machines"
+    description: |
+      Professional vending machines services with attention to detail and quality results. 
+      We use industry-best practices and quality materials for lasting solutions.
+    price: "Contact for pricing"
+  - name: "vending repair"
+    description: |
+      Professional vending repair services with attention to detail and quality results. 
+      We use industry-best practices and quality materials for lasting solutions.
+    price: "Contact for pricing"
+  - name: "restocking"
+    description: |
+      Professional restocking services with attention to detail and quality results. 
+      We use industry-best practices and quality materials for lasting solutions.
+    price: "Contact for pricing"
+  - name: "snacks"
+    description: |
+      Professional snacks services with attention to detail and quality results. 
+      We use industry-best practices and quality materials for lasting solutions.
+    price: "Contact for pricing"
