@@ -1,0 +1,11 @@
+name: "Greg's Vending"
+tagline: "Vending got us like..."
+phone: "3071232456"
+email: "heygreg@test.com"
+address: ""
+city: "Gillette"
+state: "WY"
+zip: "82716"
+hours: "Mon-Fri: 9am-5pm, Sat: 9am-2pm"
+service_areas:
+  - "Gillette Wy"
