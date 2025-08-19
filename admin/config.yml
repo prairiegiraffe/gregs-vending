@@ -6,6 +6,11 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
+media_library:
+  name: uploadcare
+  config:
+    publicKey: "demopublickey"
+
 site_url: https://gregs-vending-site.pages.dev
 display_url: https://gregs-vending-site.pages.dev
 
