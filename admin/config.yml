@@ -2,8 +2,6 @@ backend:
   name: github
   repo: prairiegiraffe/gregs-vending
   branch: main
-  base_url: https://pg-sites.vercel.app
-  auth_endpoint: api/auth
 
 media_folder: "images"
 public_folder: "/images"
