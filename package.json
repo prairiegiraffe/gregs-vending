@@ -1,0 +1,9 @@
+{
+  "name": "gregs-vending",
+  "version": "1.0.0",
+  "description": "Website for Greg's Vending",
+  "scripts": {
+    "build": "echo \"Static site - no build required\"",
+    "start": "echo \"Static site - ready for deployment\""
+  }
+}
