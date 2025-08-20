@@ -26,6 +26,13 @@ body {
 
 /* CSS Custom Properties (Variables) */
 :root {
+  --font-primary: 'Courier New', monospace;
+  --button-radius: 6px;
+  --text-color: #111827;
+  --background-color: #FFFFFF;
+  --accent-color: #f59e0b;
+  --secondary-color: white;
+  --primary-color: Pink;
   /* Brand Colors */
   --color-primary: Pink;
   --color-secondary: white;
